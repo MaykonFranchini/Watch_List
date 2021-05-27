@@ -1,0 +1,19 @@
+<div>
+  <h2>All lists</h2>
+ <!--  <%= link_to 'Create a new list', lists_path, class:"hidden-form" %> -->
+<hr>
+
+  <div >
+  <%= simple_form_for(@list) do |f|%>
+  <%= f.input :name, placeholder:"Create a new list"%>
+  <%= f.submit%>
+  <% end %>
+</div>
+
+<hr>
+  <% @lists.each do |list| %>
+  <div>
+    <h3> <%= link_to list.name, list_path(list.id) %></h3>
+  </div>
+  <% end %>
+</div>
