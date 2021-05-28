@@ -2,7 +2,7 @@
   <h1>Create a list</h1>
   <%= simple_form_for(@list) do |f|%>
     <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit%>
+    <%= f.input :photo, as: :file, class:"btn btn-secondary"%>
+    <%= f.submit class:"btn btn-success"%>
   <% end %>
 </div>

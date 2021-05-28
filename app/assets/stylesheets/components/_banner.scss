@@ -8,7 +8,7 @@
   width: 100%;
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 150px;
 }
 
 .banner h1 {
@@ -49,4 +49,19 @@ margin-top: 50px;
   padding: 5px 10px;
   border-radius: 5px;
   background-color: red;
+}
+
+.banner-container {
+  position: relative;
+}
+.banner-text {
+  font-family: Helvetica, sans-serif;
+  text-shadow: 1px 1px 2px gray;
+  position: absolute;
+  top: 200px;
+  left:400px;
+  z-index:1000;
+  font-size:2rem;
+  color: white;
+  font-weight: bold;
 }
