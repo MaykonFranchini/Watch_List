@@ -1,5 +1,6 @@
-<h2><%= @list.name %></h2>
-<%= link_to 'Home', lists_path, class: "btn btn-primary" %>
+<div class="pages">
+  <h2><%= @list.name %></h2>
+
   <div>
   <% @list.bookmarks.each do |bookmark| %>
   <div class="card" style="width: 18rem;">
@@ -7,11 +8,13 @@
     <div class="card-body">
       <div>
         <p class="card-title"><%= bookmark.movie.title %></p>
-        <p>Rating: <%= bookmark.movie.rating %></p>
+        <p>Rating: <%= bookmark.movie.rating %><i class="fas fa-star" style="color:#ffe900"></i></p>
       </div>
       <p class="card-text"><%= bookmark.movie.overview %></p>
-      <p><%= bookmark.comment %></p>
+      <p><i class="fas fa-quote-left"></i><%= bookmark.comment %></p>
     </div>
   </div>
   <% end%>
 
+
+</div>

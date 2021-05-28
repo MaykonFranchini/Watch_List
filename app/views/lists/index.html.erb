@@ -1,9 +1,17 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuL97GQjwnCpecWlImPTAezL6zmJt4gupb3A&usqp=CAU);">
+  <div class="container">
+    <h1 class="text-center">Organize your favoutire movies in a nice way</h1>
+    <p class="text-center">Classic</p>
+  </div>
+</div>
+
+
 <div>
   <h2>All lists</h2>
  <!--  <%= link_to 'Create a new list', lists_path, class:"hidden-form" %> -->
 <hr>
 
-  <div >
+  <div class="form-center" >
   <%= simple_form_for(@list) do |f|%>
   <%= f.input :name, placeholder:"Create a new list"%>
   <%= f.submit%>
@@ -11,9 +19,12 @@
 </div>
 
 <hr>
+<div class="cards">
   <% @lists.each do |list| %>
-  <div>
-    <h3> <%= link_to list.name, list_path(list.id) %></h3>
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+      <h3> <%= link_to list.name, list_path(list.id) %></h3>
+    </div>
   <% end %>
 </div>
+
+
