@@ -1,6 +1,13 @@
 .cards {
+  margin: 0 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+.cards-films {
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
@@ -44,6 +51,7 @@
   padding: 50px;
   text-align: center;
   background-size: cover;
+  box-shadow: 2px 2px 4px gray;
 }
 a {
   color:white;
@@ -51,5 +59,41 @@ a {
   &:hover {
     color: black;
     text-decoration: none;
+  }
+}
+
+.card-film {
+
+  border-radius: 10px;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 4px gray;
+  overflow: hidden;
+    img {
+      object-fit: fill;
+      width: 100%;
+      height: 300px;
+    }
+}
+
+i {
+  text-shadow: 1px 1px 1px gray;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 100%;
   }
 }

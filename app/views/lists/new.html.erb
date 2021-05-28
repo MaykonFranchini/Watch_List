@@ -1,4 +1,7 @@
-<%= simple_form_for(@list) do |f|%>
-<%= f.input :name %>
-<%= f.submit%>
-<% end %>
+<div class="pages container">
+  <h1>Create a list</h1>
+  <%= simple_form_for(@list) do |f|%>
+    <%= f.input :name %>
+    <%= f.submit%>
+  <% end %>
+</div>

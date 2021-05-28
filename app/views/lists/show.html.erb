@@ -1,20 +1,34 @@
 <div class="pages">
-  <h2><%= @list.name %></h2>
 
-  <div>
-  <% @list.bookmarks.each do |bookmark| %>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <div>
-        <p class="card-title"><%= bookmark.movie.title %></p>
-        <p>Rating: <%= bookmark.movie.rating %><i class="fas fa-star" style="color:#ffe900"></i></p>
-      </div>
-      <p class="card-text"><%= bookmark.movie.overview %></p>
-      <p><i class="fas fa-quote-left"></i><%= bookmark.comment %></p>
+  <div class="banner-films relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuL97GQjwnCpecWlImPTAezL6zmJt4gupb3A&usqp=CAU);">
+    <div class= "absolute"><%= @list.bookmarks.count %> movies</div>
+    <div class="container">
+      <h1 class="text-center"><%= @list.name %></h1>
     </div>
   </div>
-  <% end%>
 
-
+  <div class="container">
+    <div class="d-flex justify-content-end my-3 rounded">
+      <%= link_to 'add a movie', new_list_bookmark_path(@list.id), class:"btn btn-success" %>
+    </div>
+    <div class="cards-films">
+      <% if @list.bookmarks.count == 0 %>
+      <%= '<h2>There is no films yet</h2>'.html_safe %>
+      <% else %>
+        <% @list.bookmarks.each do |bookmark| %>
+        <div class="card-film border-secondary" >
+          <img src='<%= bookmark.movie.poster_url %>' alt="Card image cap">
+          <div >
+            <div>
+              <h4 class="my-2 px-2" ><strong><%= bookmark.movie.title %></strong></h4>
+              <p class="px-2">Rating: <%= bookmark.movie.rating %><i class="fas fa-star" style="color:#ffe900"></i></p>
+            </div>
+            <p class="px-2"><%= bookmark.movie.overview %></p>
+            <p class="px-2"><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
+          </div>
+        </div>
+        <% end%>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,11 @@
-  <div >
-  <%= simple_form_for [@list, @bookmark] do |f|%>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.association :list %>
-  <%= f.submit%>
-  <% end %>
+<div class="pages">
+  <div class="container">
+    <div >
+      <%= simple_form_for [@list, @bookmark] do |f|%>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.submit%>
+      <% end %>
+    </div>
+  </div>
 </div>
