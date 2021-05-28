@@ -9,7 +9,7 @@
 
   <div class="container">
     <div class="d-flex justify-content-end my-3 rounded">
-      <%= link_to 'add a movie', new_list_bookmark_path(@list.id), class:"btn btn-success" %>
+    <a href="#add-book" class="btn btn-success">Add a movie</a>
     </div>
     <div class="cards-films">
       <% if @list.bookmarks.count == 0 %>
@@ -24,11 +24,22 @@
               <p class="px-2">Rating: <%= bookmark.movie.rating %><i class="fas fa-star" style="color:#ffe900"></i></p>
             </div>
             <p class="px-2"><%= bookmark.movie.overview %></p>
-            <p class="px-2"><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
+            <div class="d-flex justify-content-between">
+              <p class="px-2"><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
+            <%= link_to"Delete",  bookmark_path(bookmark), method: :delete, data: { confirm: "Sure?"}, class:"btn btn-danger rounded m-2"%></div>
           </div>
         </div>
         <% end%>
       <% end %>
     </div>
+  </div>
+    <div id="add-book" class="container my-5">
+      <div >
+        <%= simple_form_for [@list, @bookmark] do |f|%>
+        <%= f.input :comment %>
+        <%= f.association :movie %>
+        <%= f.submit class:"btn btn-success"%>
+        <% end %>
+      </div>
   </div>
 </div>

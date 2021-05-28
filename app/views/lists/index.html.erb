@@ -19,7 +19,7 @@
 <div>
   <h2 class="text-center my-5">All lists</h2>
  <!--  <%= link_to 'Create a new list', lists_path, class:"hidden-form" %> -->
-
+  <div class="d-flex justify-content-end rounded mb-3"><%= link_to "Create a list", new_list_path, class:"btn btn-success" %></div>
     <div class="cards">
       <% @lists.each do |list| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
