@@ -19,7 +19,7 @@ movies['results'].each do |movie_hash|
   movie = Movie.create!(
     title: movie_hash['original_title'],
     overview:  movie_hash['overview'],
-    poster_url: "https://image.tmdb.org/t/p/w500#{movie_hash['poster_path']}",
+    poster_url: "https://image.tmdb.org/t/p/w500#{movie_hash['backdrop_path']}",
     rating: (0..10).to_a.sample
   )
   puts movie['poster_url']
